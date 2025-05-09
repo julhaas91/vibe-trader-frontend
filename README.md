@@ -7,9 +7,8 @@ Vibe Trader Agent UI is a Next.js application which enables chatting with any La
 ## Setup
 
 ```bash
-git clone https://github.com/langchain-ai/agent-chat-ui.git
-
-cd agent-chat-ui
+git clone https://github.com/julhaas91/vibe-trader-frontend.git
+cd vibe-trader-frontend
 ```
 
 Install dependencies:
