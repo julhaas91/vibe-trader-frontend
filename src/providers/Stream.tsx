@@ -23,7 +23,13 @@ import { LangGraphLogoSVG } from "@/components/icons/langgraph";
 import { Label } from "@/components/ui/label";
 import { ArrowRight } from "lucide-react";
 import { PasswordInput } from "@/components/ui/password-input";
-import { getApiKey, getOrganizationId, getTenantId, getAssistantId, getDeploymentUrl } from "@/lib/api-key";
+import {
+  getApiKey,
+  getOrganizationId,
+  getTenantId,
+  getAssistantId,
+  getDeploymentUrl,
+} from "@/lib/api-key";
 import { useThreads } from "./Thread";
 import { toast } from "sonner";
 
@@ -62,21 +68,21 @@ async function checkGraphStatus(
         messages: [
           {
             role: "user",
-            content: "test"
-          }
-        ]
-      }
+            content: "test",
+          },
+        ],
+      },
     };
 
     const res = await fetch(`${apiUrl}/threads`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         ...(apiKey && { "X-Api-Key": apiKey }),
         ...(organizationId && { "X-Organization-Id": organizationId }),
-        ...(tenantId && { "X-Tenant-Id": tenantId })
+        ...(tenantId && { "X-Tenant-Id": tenantId }),
       },
-      body: JSON.stringify(testMessage)
+      body: JSON.stringify(testMessage),
     });
 
     // If we get a 404 or 400, it might mean the endpoint exists but the test assistant_id is invalid
@@ -112,7 +118,7 @@ const StreamSession = ({
     threadId: threadId ?? null,
     defaultHeaders: {
       ...(organizationId && { "X-Organization-Id": organizationId }),
-      ...(tenantId && { "X-Tenant-Id": tenantId })
+      ...(tenantId && { "X-Tenant-Id": tenantId }),
     },
     onCustomEvent: (event, options) => {
       if (isUIMessage(event) || isRemoveUIMessage(event)) {

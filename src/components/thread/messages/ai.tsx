@@ -84,11 +84,11 @@ function Interrupt({
         (isLastMessage || hasNoAIOrToolMessages) && (
           <ThreadView interrupt={interruptValue} />
         )}
-      {/* 
+      {/*
         Removed GenericInterruptView to prevent character-level breakdown display
         This was causing poor UX by showing individual characters in a table
       */}
-      {/* 
+      {/*
       {interruptValue &&
       !isAgentInboxInterruptSchema(interruptValue) &&
       isLastMessage ? (
