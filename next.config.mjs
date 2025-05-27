@@ -8,7 +8,7 @@ const nextConfig = {
     NEXT_PUBLIC_X_TENANT_ID: process.env.NEXT_PUBLIC_X_TENANT_ID,
     NEXT_PUBLIC_ACCESS_CODE: process.env.NEXT_PUBLIC_ACCESS_CODE,
   },
-  devIndicators: false
+  devIndicators: false,
 };
 
 export default nextConfig;

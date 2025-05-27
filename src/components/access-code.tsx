@@ -20,13 +20,13 @@ export function AccessCode({ onAccessGranted }: AccessCodeProps) {
     // Get the access code from environment variable and trim any whitespace
     const accessCode = process.env.NEXT_PUBLIC_ACCESS_CODE?.trim();
     const enteredCode = code.trim();
-    
+
     // For debugging
-    console.log('Entered code:', enteredCode);
-    console.log('Expected code:', accessCode);
-    console.log('Length of entered code:', enteredCode.length);
-    console.log('Length of expected code:', accessCode?.length);
-    
+    console.log("Entered code:", enteredCode);
+    console.log("Expected code:", accessCode);
+    console.log("Length of entered code:", enteredCode.length);
+    console.log("Length of expected code:", accessCode?.length);
+
     // Check if the codes match (case-insensitive)
     if (enteredCode.toLowerCase() === accessCode?.toLowerCase()) {
       // Store access in localStorage
@@ -87,4 +87,4 @@ export function AccessCode({ onAccessGranted }: AccessCodeProps) {
       </div>
     </div>
   );
-} 
+}
