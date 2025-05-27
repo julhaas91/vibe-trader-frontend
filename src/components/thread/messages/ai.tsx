@@ -12,7 +12,6 @@ import { Fragment } from "react/jsx-runtime";
 import { isAgentInboxInterruptSchema } from "@/lib/agent-inbox-interrupt";
 import { ThreadView } from "../agent-inbox";
 import { useQueryState, parseAsBoolean } from "nuqs";
-import { GenericInterruptView } from "./generic-interrupt";
 import { useArtifact } from "../artifact";
 
 function CustomComponent({
@@ -161,8 +160,8 @@ export function AssistantMessage({
         ) : (
           <>
             {contentString.length > 0 && (
-              <div className="py-1">
-                <MarkdownText>{contentString}</MarkdownText>
+              <div className="py-1" style={{ minHeight: '1px' }}>
+                <MarkdownText key={message?.id}>{contentString}</MarkdownText>
               </div>
             )}
 

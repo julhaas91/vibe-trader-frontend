@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { LangGraphLogoSVG } from "@/components/icons/langgraph";
+import Image from "next/image";
 import { toast } from "sonner";
 
 interface AccessCodeProps {
@@ -48,7 +48,13 @@ export function AccessCode({ onAccessGranted }: AccessCodeProps) {
       <div className="animate-in fade-in-0 zoom-in-95 bg-background flex max-w-md flex-col rounded-lg border shadow-lg">
         <div className="mt-14 flex flex-col gap-2 border-b p-6">
           <div className="flex flex-col items-start gap-2">
-            <LangGraphLogoSVG className="h-7" />
+            <Image 
+              src="/icon.png" 
+              alt="Vibe Trader Icon" 
+              width={28} 
+              height={28}
+              className="h-7 w-7"
+            />
             <h1 className="text-xl font-semibold tracking-tight">
               Vibe Trader Agent
             </h1>
