@@ -12,8 +12,8 @@ import { Fragment } from "react/jsx-runtime";
 import { isAgentInboxInterruptSchema } from "@/lib/agent-inbox-interrupt";
 import { ThreadView } from "../agent-inbox";
 import { useQueryState, parseAsBoolean } from "nuqs";
-import { GenericInterruptView } from "./generic-interrupt";
 import { useArtifact } from "../artifact";
+import { GenericInterruptView } from "./generic-interrupt";
 
 function CustomComponent({
   message,
@@ -84,17 +84,11 @@ function Interrupt({
         (isLastMessage || hasNoAIOrToolMessages) && (
           <ThreadView interrupt={interruptValue} />
         )}
-      {/*
-        Removed GenericInterruptView to prevent character-level breakdown display
-        This was causing poor UX by showing individual characters in a table
-      */}
-      {/*
       {interruptValue &&
       !isAgentInboxInterruptSchema(interruptValue) &&
       isLastMessage ? (
         <GenericInterruptView interrupt={interruptValue} />
       ) : null}
-      */}
     </>
   );
 }
@@ -161,8 +155,8 @@ export function AssistantMessage({
         ) : (
           <>
             {contentString.length > 0 && (
-              <div className="py-1">
-                <MarkdownText>{contentString}</MarkdownText>
+              <div className="py-1" style={{ minHeight: '1px' }}>
+                <MarkdownText key={message?.id}>{contentString}</MarkdownText>
               </div>
             )}
 
