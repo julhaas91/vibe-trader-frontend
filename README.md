@@ -28,3 +28,8 @@ The app will be available at `http://localhost:3000`.
 ## Acknowledgments
 
 This frontend is based on the [LangChain Agent Chat UI](https://github.com/langchain-ai/agent-chat-ui) repository.
+
+## Questions and Support
+
+> If you have any questions or need technical support, feel free to reach out.  
+> You can contact me via [email](mailto:juliushaas91@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/jh91/).
